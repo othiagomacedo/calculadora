@@ -8,6 +8,10 @@ package com.tela;
  *
  * @author thiag
  */
+
+import com.calcular.Soma;
+import javax.swing.JOptionPane;
+        
 public class TelaCalculadora extends javax.swing.JFrame {
 
     /**
@@ -27,8 +31,8 @@ public class TelaCalculadora extends javax.swing.JFrame {
     private void initComponents() {
 
         bgCalc = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        btnMenuHamb = new javax.swing.JLabel();
+        bgAlteraModo = new javax.swing.JPanel();
+        btnAlteraModo = new javax.swing.JLabel();
         titleCalc = new javax.swing.JLabel();
         displaySec = new javax.swing.JLabel();
         displayPrinc = new javax.swing.JLabel();
@@ -80,35 +84,36 @@ public class TelaCalculadora extends javax.swing.JFrame {
         btnRaizCub = new javax.swing.JLabel();
         jPanel59 = new javax.swing.JPanel();
         btnApagar = new javax.swing.JLabel();
+        bgThemeMode = new javax.swing.JPanel();
+        btnThemeMode = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         bgCalc.setBackground(new java.awt.Color(20, 20, 20));
 
-        jPanel3.setBackground(new java.awt.Color(28, 28, 28));
+        bgAlteraModo.setBackground(new java.awt.Color(28, 28, 28));
 
-        btnMenuHamb.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnMenuHamb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/hamb.png"))); // NOI18N
-        btnMenuHamb.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnAlteraModo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnAlteraModo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnMenuHambMouseClicked(evt);
+                btnAlteraModoMouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout bgAlteraModoLayout = new javax.swing.GroupLayout(bgAlteraModo);
+        bgAlteraModo.setLayout(bgAlteraModoLayout);
+        bgAlteraModoLayout.setHorizontalGroup(
+            bgAlteraModoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bgAlteraModoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnMenuHamb, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addComponent(btnAlteraModo, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        bgAlteraModoLayout.setVerticalGroup(
+            bgAlteraModoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bgAlteraModoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnMenuHamb, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addComponent(btnAlteraModo, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -184,7 +189,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
         );
         jPanel41Layout.setVerticalGroup(
             jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 61, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
             .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel41Layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -219,7 +224,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 61, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
             .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel29Layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -617,7 +622,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
         );
         jPanel50Layout.setVerticalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 61, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
             .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel50Layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -652,7 +657,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
         );
         jPanel51Layout.setVerticalGroup(
             jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 61, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
             .addGroup(jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel51Layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -666,7 +671,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
         btnFatorial.setFont(new java.awt.Font("Calibri", 0, 40)); // NOI18N
         btnFatorial.setForeground(new java.awt.Color(255, 255, 255));
         btnFatorial.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnFatorial.setText("!");
+        btnFatorial.setText("n!");
         btnFatorial.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnFatorial.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -910,6 +915,32 @@ public class TelaCalculadora extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        bgThemeMode.setBackground(new java.awt.Color(28, 28, 28));
+
+        btnThemeMode.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnThemeMode.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnThemeModeMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout bgThemeModeLayout = new javax.swing.GroupLayout(bgThemeMode);
+        bgThemeMode.setLayout(bgThemeModeLayout);
+        bgThemeModeLayout.setHorizontalGroup(
+            bgThemeModeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bgThemeModeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnThemeMode, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        bgThemeModeLayout.setVerticalGroup(
+            bgThemeModeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bgThemeModeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnThemeMode, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout bgCalcLayout = new javax.swing.GroupLayout(bgCalc);
         bgCalc.setLayout(bgCalcLayout);
         bgCalcLayout.setHorizontalGroup(
@@ -966,10 +997,12 @@ public class TelaCalculadora extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(bgCalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, bgCalcLayout.createSequentialGroup()
-                            .addComponent(titleCalc, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(bgCalcLayout.createSequentialGroup()
+                            .addComponent(titleCalc, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(bgThemeMode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(bgAlteraModo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(displayPrinc, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
                         .addComponent(displaySec, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(20, Short.MAX_VALUE))
@@ -979,10 +1012,11 @@ public class TelaCalculadora extends javax.swing.JFrame {
             .addGroup(bgCalcLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(bgCalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(titleCalc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(displaySec)
+                    .addComponent(bgAlteraModo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(titleCalc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bgThemeMode, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(displaySec, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(displayPrinc, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -1000,28 +1034,28 @@ public class TelaCalculadora extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgCalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(bgCalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel43, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
-                        .addComponent(jPanel30, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                        .addComponent(jPanel43, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 61, Short.MAX_VALUE)
+                        .addComponent(jPanel30, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 61, Short.MAX_VALUE)
                         .addComponent(jPanel40, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel39, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgCalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel41, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
-                    .addComponent(jPanel28, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
-                    .addComponent(jPanel29, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                    .addComponent(jPanel41, javax.swing.GroupLayout.PREFERRED_SIZE, 61, Short.MAX_VALUE)
+                    .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, 61, Short.MAX_VALUE)
+                    .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, 61, Short.MAX_VALUE)
                     .addComponent(jPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgCalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel44, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel45, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel46, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel50, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
+                    .addComponent(jPanel50, javax.swing.GroupLayout.PREFERRED_SIZE, 61, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgCalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel47, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel48, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel49, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel51, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
+                    .addComponent(jPanel51, javax.swing.GroupLayout.PREFERRED_SIZE, 61, Short.MAX_VALUE))
                 .addGap(20, 20, 20))
         );
 
@@ -1041,21 +1075,39 @@ public class TelaCalculadora extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    int n0,n1,n2,n3,n4,n5,n6,n7,n8,n9;
+    String num1= "10";
+    String op="+";
+    String num2="5";
+    String saida="";
+    public double res = 0;
+    
+    Soma mais = null;
     
     public void resetarTela(){
         displayPrinc.setText("0");
         displaySec.setText("0");
-        n0 = 0;
-        n1 = 1;
-        n2 = 2;
-        n3 = 3;
-        n4 = 4;
-        n5 = 5;
-        n6 = 6;
-        n7 = 7;
-        n8 = 8;
-        n9 = 9;
+        
+    }
+    
+    public void igual(){
+        try {
+            mais = new Soma(num1,num2);
+            
+            
+            switch (op) {    
+                case "+": saida = "" + mais.somar(num1, num2); break;
+                /*case "-": saida = "" + ; break;
+                case "x": saida = "" + ; break;
+                case "/": saida = "" + ; break;*/
+            }
+            
+            
+            displayPrinc.setText(saida);
+        
+        } catch (Exception erro) {
+            JOptionPane.showMessageDialog(this, erro);
+        }
+        
     }
     
     // ACOES QUANDO O MOUSE É CLICADO
@@ -1152,7 +1204,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMaisMouseClicked
 
     private void btnIgualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIgualMouseClicked
-        // TODO add your handling code here:
+        igual();
     }//GEN-LAST:event_btnIgualMouseClicked
 
     private void bgBtnResetTelaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bgBtnResetTelaMouseEntered
@@ -1163,10 +1215,14 @@ public class TelaCalculadora extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bgBtnResetTelaMouseExited
 
-    private void btnMenuHambMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMenuHambMouseClicked
+    private void btnAlteraModoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAlteraModoMouseClicked
         // MENU DE OPÇÕES
         
-    }//GEN-LAST:event_btnMenuHambMouseClicked
+    }//GEN-LAST:event_btnAlteraModoMouseClicked
+
+    private void btnThemeModeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnThemeModeMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnThemeModeMouseClicked
 
     
     /**
@@ -1205,8 +1261,11 @@ public class TelaCalculadora extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel bgAlteraModo;
     private javax.swing.JPanel bgBtnResetTela;
     private javax.swing.JPanel bgCalc;
+    private javax.swing.JPanel bgThemeMode;
+    private javax.swing.JLabel btnAlteraModo;
     private javax.swing.JLabel btnApagar;
     private javax.swing.JLabel btnCinco;
     private javax.swing.JLabel btnDivisao;
@@ -1216,7 +1275,8 @@ public class TelaCalculadora extends javax.swing.JFrame {
     private javax.swing.JLabel btnMais;
     private javax.swing.JLabel btnMaisMenos;
     private javax.swing.JLabel btnMenos;
-    private javax.swing.JLabel btnMenuHamb;
+    private javax.swing.JLabel btnMenuHamb1;
+    private javax.swing.JLabel btnMenuHamb2;
     private javax.swing.JLabel btnMulti;
     private javax.swing.JLabel btnNove;
     private javax.swing.JLabel btnOito;
@@ -1228,6 +1288,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
     private javax.swing.JLabel btnResetTela;
     private javax.swing.JLabel btnSeis;
     private javax.swing.JLabel btnSete;
+    private javax.swing.JLabel btnThemeMode;
     private javax.swing.JLabel btnTres;
     private javax.swing.JLabel btnUm;
     private javax.swing.JLabel btnVirgula;
@@ -1236,9 +1297,9 @@ public class TelaCalculadora extends javax.swing.JFrame {
     private javax.swing.JLabel displaySec;
     private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel29;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel39;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel40;
     private javax.swing.JPanel jPanel41;
     private javax.swing.JPanel jPanel42;
@@ -1249,6 +1310,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel47;
     private javax.swing.JPanel jPanel48;
     private javax.swing.JPanel jPanel49;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel50;
     private javax.swing.JPanel jPanel51;
     private javax.swing.JPanel jPanel52;
