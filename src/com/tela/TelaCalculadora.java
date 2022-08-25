@@ -9,7 +9,7 @@ package com.tela;
  * @author thiag
  */
 
-import com.calcular.Soma;
+import com.calcular.Intermediador;
 import javax.swing.JOptionPane;
         
 public class TelaCalculadora extends javax.swing.JFrame {
@@ -124,12 +124,12 @@ public class TelaCalculadora extends javax.swing.JFrame {
         displaySec.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         displaySec.setForeground(new java.awt.Color(255, 245, 200));
         displaySec.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        displaySec.setText("jLabel2");
+        displaySec.setText("0");
 
         displayPrinc.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
         displayPrinc.setForeground(new java.awt.Color(224, 243, 231));
         displayPrinc.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        displayPrinc.setText("000,000,000,000");
+        displayPrinc.setText("0");
 
         jPanel40.setBackground(new java.awt.Color(255, 255, 153));
         jPanel40.setPreferredSize(new java.awt.Dimension(80, 80));
@@ -622,7 +622,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
         );
         jPanel50Layout.setVerticalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 61, Short.MAX_VALUE)
             .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel50Layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -657,7 +657,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
         );
         jPanel51Layout.setVerticalGroup(
             jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 61, Short.MAX_VALUE)
             .addGroup(jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel51Layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1034,28 +1034,28 @@ public class TelaCalculadora extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgCalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(bgCalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel43, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 61, Short.MAX_VALUE)
-                        .addComponent(jPanel30, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 61, Short.MAX_VALUE)
+                        .addComponent(jPanel43, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                        .addComponent(jPanel30, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
                         .addComponent(jPanel40, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel39, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgCalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel41, javax.swing.GroupLayout.PREFERRED_SIZE, 61, Short.MAX_VALUE)
-                    .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, 61, Short.MAX_VALUE)
-                    .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, 61, Short.MAX_VALUE)
+                    .addComponent(jPanel41, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                    .addComponent(jPanel28, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                    .addComponent(jPanel29, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
                     .addComponent(jPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgCalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel44, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel45, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel46, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel50, javax.swing.GroupLayout.PREFERRED_SIZE, 61, Short.MAX_VALUE))
+                    .addComponent(jPanel50, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgCalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel47, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel48, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel49, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel51, javax.swing.GroupLayout.PREFERRED_SIZE, 61, Short.MAX_VALUE))
+                    .addComponent(jPanel51, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
                 .addGap(20, 20, 20))
         );
 
@@ -1079,9 +1079,13 @@ public class TelaCalculadora extends javax.swing.JFrame {
     String op="+";
     String num2="5";
     String saida="";
+    
+    String digito = "";
+    String btnClic = "";
+    
     public double res = 0;
     
-    Soma mais = null;
+    Intermediador inter = new Intermediador (digito,btnClic);
     
     public void resetarTela(){
         displayPrinc.setText("0");
@@ -1089,24 +1093,29 @@ public class TelaCalculadora extends javax.swing.JFrame {
         
     }
     
-    public void igual(){
-        try {
-            mais = new Soma(num1,num2);
-            
-            
-            switch (op) {    
-                case "+": saida = "" + mais.somar(num1, num2); break;
-                /*case "-": saida = "" + ; break;
-                case "x": saida = "" + ; break;
-                case "/": saida = "" + ; break;*/
-            }
-            
-            
-            displayPrinc.setText(saida);
+    
+    public void envioInf(String tc){
         
-        } catch (Exception erro) {
-            JOptionPane.showMessageDialog(this, erro);
+        this.btnClic = tc;
+        
+        if (btnClic.equals("+") || btnClic.equals("-") || btnClic.equals("x")  || btnClic.equals("/")) {
+            inter.popular(digito, btnClic);
+            
+            this.digito = "";
+        } else {
+            this.digito += tc;
         }
+        
+        
+        if (btnClic.equals("=")) {
+            res = inter.executOper();
+            
+            displaySec.setText(digito);
+            displayPrinc.setText(res+"");
+        } else {
+            displayPrinc.setText(digito);
+        }
+        
         
     }
     
@@ -1140,47 +1149,47 @@ public class TelaCalculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPotenciaMouseClicked
 
     private void btnDivisaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDivisaoMouseClicked
-        // TODO add your handling code here:
+        envioInf("/");
     }//GEN-LAST:event_btnDivisaoMouseClicked
 
     private void btnSeteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSeteMouseClicked
-        // TODO add your handling code here:
+        envioInf("7"); 
     }//GEN-LAST:event_btnSeteMouseClicked
 
     private void btnOitoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOitoMouseClicked
-        // TODO add your handling code here:
+        envioInf("8");
     }//GEN-LAST:event_btnOitoMouseClicked
 
     private void btnNoveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNoveMouseClicked
-        // TODO add your handling code here:
+        envioInf("9");
     }//GEN-LAST:event_btnNoveMouseClicked
 
     private void btnQuatroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQuatroMouseClicked
-        // TODO add your handling code here:
+        envioInf("4");
     }//GEN-LAST:event_btnQuatroMouseClicked
 
     private void btnCincoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCincoMouseClicked
-        // TODO add your handling code here:
+        envioInf("5");
     }//GEN-LAST:event_btnCincoMouseClicked
 
     private void btnSeisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSeisMouseClicked
-        // TODO add your handling code here:
+        envioInf("6");
     }//GEN-LAST:event_btnSeisMouseClicked
 
     private void btnUmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUmMouseClicked
-        // TODO add your handling code here:
+        envioInf("1");
     }//GEN-LAST:event_btnUmMouseClicked
 
     private void btnDoisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDoisMouseClicked
-        // TODO add your handling code here:
+        envioInf("2");
     }//GEN-LAST:event_btnDoisMouseClicked
 
     private void btnTresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTresMouseClicked
-        // TODO add your handling code here:
+        envioInf("3");
     }//GEN-LAST:event_btnTresMouseClicked
 
     private void btnZeroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnZeroMouseClicked
-        displayPrinc.setText("ZERO");
+        envioInf("0");
     }//GEN-LAST:event_btnZeroMouseClicked
 
     private void btnMaisMenosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMaisMenosMouseClicked
@@ -1192,19 +1201,19 @@ public class TelaCalculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVirgulaMouseClicked
 
     private void btnMultiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMultiMouseClicked
-        // TODO add your handling code here:
+        envioInf("x");
     }//GEN-LAST:event_btnMultiMouseClicked
 
     private void btnMenosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMenosMouseClicked
-        // TODO add your handling code here:
+        envioInf("-");
     }//GEN-LAST:event_btnMenosMouseClicked
 
     private void btnMaisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMaisMouseClicked
-        // TODO add your handling code here:
+        envioInf("+");
     }//GEN-LAST:event_btnMaisMouseClicked
 
     private void btnIgualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIgualMouseClicked
-        igual();
+        envioInf("=");
     }//GEN-LAST:event_btnIgualMouseClicked
 
     private void bgBtnResetTelaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bgBtnResetTelaMouseEntered
@@ -1275,8 +1284,6 @@ public class TelaCalculadora extends javax.swing.JFrame {
     private javax.swing.JLabel btnMais;
     private javax.swing.JLabel btnMaisMenos;
     private javax.swing.JLabel btnMenos;
-    private javax.swing.JLabel btnMenuHamb1;
-    private javax.swing.JLabel btnMenuHamb2;
     private javax.swing.JLabel btnMulti;
     private javax.swing.JLabel btnNove;
     private javax.swing.JLabel btnOito;
@@ -1299,7 +1306,6 @@ public class TelaCalculadora extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel39;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel40;
     private javax.swing.JPanel jPanel41;
     private javax.swing.JPanel jPanel42;
@@ -1310,7 +1316,6 @@ public class TelaCalculadora extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel47;
     private javax.swing.JPanel jPanel48;
     private javax.swing.JPanel jPanel49;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel50;
     private javax.swing.JPanel jPanel51;
     private javax.swing.JPanel jPanel52;

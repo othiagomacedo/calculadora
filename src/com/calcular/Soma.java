@@ -13,6 +13,13 @@ public class Soma {
     double n1 = 0;
     double n2 = 0;
     
+    public double somar (String num1, String num2) {
+        this.n1 = Double.parseDouble(num1);
+        this.n2 = Double.parseDouble(num2);
+        
+        return n1+n2;
+    }
+    
     public Soma (String num1, String num2){
         
         this.n1 = Double.parseDouble(num1);
@@ -24,11 +31,7 @@ public class Soma {
         */
     }
     
-    public double somar (String num1, String num2) throws Exception {
-        this.n1 = Double.parseDouble(num1);
-        this.n2 = Double.parseDouble(num2);
-        return n1+n2;
-    }
+    
 
     public double getN1() {
         return n1;

@@ -10,4 +10,18 @@ package com.calcular;
  */
 public class Divisao {
     
+    public Divisao(String num1, String num2) {
+        
+    }
+    
+    double n1 = 0;
+    double n2 = 0;
+    
+    public double dividir (String num1, String num2) {
+        this.n1 = Double.parseDouble(num1);
+        this.n2 = Double.parseDouble(num2);
+        
+        return n1+n2;
+    }
+    
 }
