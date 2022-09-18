@@ -14,11 +14,12 @@ public class Basico {
     double num2 = 0;
     double res = 0;
     
-    
+    //Construtor
     public Basico() {
     }
 
-    //MÉTODOS
+    
+    //Metodos
     public double Somar(String n1, String n2) throws Exception {
         this.num1 = Double.parseDouble(n1);
         this.num2 = Double.parseDouble(n2);
@@ -37,13 +38,8 @@ public class Basico {
     public double Div(String n1, String n2) throws Exception {
         this.num1 = Double.parseDouble(n1);
         this.num2 = Double.parseDouble(n2);
-        if (num2 ==0 ) {
-            throw new Exception("não pode ser divisível por 0");
-        } else {
-            res = num1 / num2;
-            return res;
-        }
-        
+        res = num1/num2;
+        return res;
     }
     
     public double Multi(String n1, String n2) throws Exception {

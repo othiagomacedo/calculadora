@@ -11,6 +11,7 @@ package com.tela;
 
 import com.calcular.Basico;
 import com.calcular.Avancado;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 
@@ -20,6 +21,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
      * Creates new form TelaCalculadora
      */
     public TelaCalculadora() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("calculadora.png")));
         initComponents();
         this.setLocationRelativeTo(null);
         btnApagar.setVisible(false);   
@@ -325,7 +327,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
         bg10SeteLayout.setVerticalGroup(
             bg10SeteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bg10SeteLayout.createSequentialGroup()
-                .addGap(0, 11, Short.MAX_VALUE)
+                .addGap(0, 12, Short.MAX_VALUE)
                 .addComponent(btnSete))
         );
 
@@ -1012,7 +1014,6 @@ public class TelaCalculadora extends javax.swing.JFrame {
     }
     
 
-    
     public void igual(){
         try {
             if (op.equals("+")) resSoma = bas.Somar(numero1, numero2);
@@ -1020,7 +1021,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
             if (op.equals("/")) resSoma = bas.Div(numero1, numero2);
             if (op.equals("x")) resSoma = bas.Multi(numero1, numero2);
             if (op.equals("√")) resSoma = adv.Raiz(numero1);
-            if (op.equals("p")) resSoma = adv.Pot(numero1,numero2);
+            if (op.equals("p")) resSoma = adv.Pot(numero1);
             
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro+" | Digite um número válido!");
@@ -1074,7 +1075,18 @@ public class TelaCalculadora extends javax.swing.JFrame {
             btnApagar.setVisible(true);
         }
         
+        //verifica se operacao é uma raiz
+        if (teclaDigitada.equals("√")){
+            this.op = teclaDigitada;
+        }
+        
+        //verifica se operacao é uma potencia
+        if (teclaDigitada.equals("p")){
+            this.op = teclaDigitada;
+        }
+
         //verifica se tecla é uma operacao
+        
         if (teclaDigitada.equals("√") || teclaDigitada.equals("p") || teclaDigitada.equals("+") || teclaDigitada.equals("x") || teclaDigitada.equals("-") || teclaDigitada.equals("/")) {
                     
             op = teclaDigitada;
